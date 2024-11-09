@@ -1,0 +1,243 @@
+/* Стили для навбара */
+/* Навигационный бар */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 390px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(145deg, #13263e, #092144);
+    padding: 12px 0;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 15px 15px 0 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-hidden {
+    transform: translateY(100%);
+}
+
+/* Стили иконок в навбаре */
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+/* Активная иконка */
+.nav-item.active {
+    background-color: #ffffff; 
+    border-radius: 35%;
+    padding: 3px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    transform: scale(1.15); 
+}
+
+.nav-item.active lord-icon {
+    color: #1b2f4d; 
+    filter: invert(1);
+}
+
+/* Анимация при наведении */
+.nav-item:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Переход для плавного эффекта при нажатии */
+.nav-item lord-icon {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Стили для курсов */
+/* Основные настройки для фона */
+body {
+    font-family: system-ui;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0e1b2d, #182245);
+    overflow: hidden;
+    color: #ffffff;
+    height: 100vh;
+}
+
+/* Контейнер для списка криптовалют */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 105vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    outline: none;
+    scrollbar-width: none; 
+    margin-bottom: 115px;
+}
+
+.container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Стиль заголовка */
+h1.title {
+    font-family: system-ui;
+    font-weight: 600;
+    color: #ffffff;
+    user-select: none; 
+    text-align: center;
+    text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+    padding-top: 45px;
+}
+
+/* Контейнер для списка криптовалют */
+#prices {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative; 
+}
+
+#prices > lord-icon {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    display: block; /* Лоудер будет виден изначально */
+    z-index: 10;
+}
+
+/* Карточка криптовалюты */
+.crypto-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(145deg, #1b2540, #202f4d);
+    padding: 14px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4), -4px -4px 8px rgba(255, 255, 255, 0.15);
+    margin-bottom: 12px;
+    transition: transform 0.3s ease, background-color 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
+}
+
+/* При коротком нажатии — подсветка */
+.crypto-card:active {
+    background-color: rgba(255, 255, 255, 0.5); /* Легкое подсвечивание фона */
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5), -6px -6px 12px rgba(255, 255, 255, 0.35); /* Усиленная тень */    
+}
+
+
+/* Иконка и название криптовалюты */
+.icon-name {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.crypto-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.1);
+    user-select: none;
+}
+
+/* Выровненные название и цена криптовалюты */
+.crypto-name {
+    font-family: system-ui;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 2%;
+    white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    flex-grow: 1;
+    user-select: none;
+}
+
+.crypto-price {
+    font-family: system-ui;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: right;
+    margin-right: 4.5%;
+    min-width: 90px; /* Фиксированная ширина для выравнивания */
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    user-select: none;
+}
+
+/* Квадратные индикаторы изменений */
+.crypto-change {
+    font-family: system-ui;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 25px;
+    border-radius: 8px; 
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    user-select: none;
+}
+
+.crypto-price, .crypto-change {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.crypto-change.positive {
+    background-color: #40c057;
+}
+
+.crypto-change.negative {
+    background-color: #e03131;
+}
+
+/* Адаптивные настройки для мобильных устройств */
+@media (max-width: 400px) {
+    /* Дополнительные стили для мобильных */
+    .crypto-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .crypto-name {
+        font-size: 14px;
+    }
+
+    .crypto-price,
+    .crypto-change {
+        font-size: 13px;
+    }
+
+    #prices > lord-icon {
+        width: 40px;
+        height: 40px;
+        top: 40%;
+        left: 50%;
+    }
+}

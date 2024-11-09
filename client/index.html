@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoHustleManager</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title" style="font-size:xx-large;">Crypto Markets</h1>
+        <div id="prices" class="prices-container">
+            <lord-icon
+                src="https://cdn.lordicon.com/jpgpblwn.json"
+                trigger="loop"
+                state="loop-oscillate"
+                colors="primary:#ffffff"
+                style="width:60px;height:60px;margin-left:40%;margin-top:45%;user-select:none;">
+            </lord-icon>
+        </div>
+    </div>
+
+    <!-- Навигационный бар -->
+    <div class="navbar">
+        <div class="nav-item" id="home">
+            <lord-icon
+                src="https://cdn.lordicon.com/wmwqvixz.json"
+                state="hover-home-1"
+                trigger="click"
+                colors="primary:#ffffff"
+                style="width:30px;height:30px;user-select:none;">
+            </lord-icon>
+        </div>
+        <div class="nav-item" id="courses">
+            <lord-icon
+                src="https://cdn.lordicon.com/qhkvfxpn.json"
+                trigger="click"
+                colors="primary:#ffffff"
+                style="width:30px;height:30px;user-select:none;">
+            </lord-icon>
+        </div>
+        <div class="nav-item" id="settings">
+            <lord-icon
+                src="https://cdn.lordicon.com/ifsxxxte.json"
+                trigger="click"
+                colors="primary:#ffffff"
+                style="width:30px;height:30px;user-select:none;">
+            </lord-icon>
+        </div>
+    </div>
+
+    <!-- Скрипт для обработки кликов -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navItems = document.querySelectorAll(".nav-item");
+
+            navItems.forEach(item => {
+                item.addEventListener("click", function() {
+                    navItems.forEach(nav => nav.classList.remove("active"));
+                    this.classList.add("active");
+                });
+            });
+
+            document.getElementById("courses").classList.add("active");
+        });
+    </script>
+
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>
