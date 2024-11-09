@@ -1,0 +1,22 @@
+{
+  "name": "cryptohustlemanager",
+  "version": "0.1.0",
+  "description": "Telegram app for cryptocurrency tracking and portfolio management",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "cryptocurrency-icons": "^0.18.1",
+    "dotenv": "^8.6.0",
+    "express": "^4.21.1",
+    "nodemon": "^2.0.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
